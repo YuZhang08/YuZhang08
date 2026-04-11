@@ -1,7 +1,5 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=180&color=0:05060A,100:0D1117&section=header&text=Y%20u%20%20Z%20h%20a%20n%20g&fontColor=8B5CF6&fontSize=46&animation=fadeIn&fontAlignY=42&desc=CS%20student%20%7C%20mobile%20%26%20full-stack%20builder&descAlignY=68&descSize=18&descAlign=50" alt="Header banner" />
-
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=2800&pause=800&color=A855F7&center=true&vCenter=true&width=900&height=70&lines=Hey+there%2C+I'm+Yu+Zhang;Nice+to+meet+you.;Building+practical+apps+with+clean+engineering" alt="Typing intro" />
+  <img src="./assets/banner.svg" alt="Yu Zhang banner" width="100%" />
 </p>
 
 <p align="center">
