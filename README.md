@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="Yu Zhang banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/YuZhang08/YuZhang08/main/assets/banner.gif?v=20260413d" alt="Yu Zhang banner" width="100%" />
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/theme-black%20%2B%20neon-111111?style=for-the-badge&logoColor=A855F7" alt="Theme badge" />
-  <a href="mailto:yuyuzhang.career@gmail.com"><img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=A855F7" alt="Email" /></a>
+  <a href="mailto:yuzhang0008@gmail.com"><img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=A855F7" alt="Email" /></a>
   <a href="https://github.com/YuZhang08"><img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=A855F7" alt="GitHub" /></a>
 </p>
 
@@ -74,7 +74,7 @@ Full-stack UCLA lost-and-found platform built in a team setting, focused on post
 
 ## Contact
 
-- Email: `yuyuzhang.career@gmail.com`
+- Email: `yuzhang0008@gmail.com`
 - GitHub: `@YuZhang08`
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=100&section=footer&color=0:05060A,100:0D1117" alt="Footer banner" />
