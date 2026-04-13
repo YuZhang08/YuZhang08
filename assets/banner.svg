@@ -32,16 +32,16 @@
       </stop>
     </linearGradient>
     <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2.2" result="blur1"/>
+      <feGaussianBlur stdDeviation="1.4" result="blur1"/>
       <feColorMatrix in="blur1" type="matrix" values="1 0 0 0 0.66 0 1 0 0 0.33 0 0 1 0 0.97 0 0 0 1 0" result="glow"/>
       <feMerge>
         <feMergeNode in="glow"/>
       </feMerge>
     </filter>
     <filter id="textGlowStrong" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="4.2" result="blur1"/>
+      <feGaussianBlur stdDeviation="2.6" result="blur1"/>
       <feColorMatrix in="blur1" type="matrix" values="1 0 0 0 0.60 0 1 0 0 0.20 0 0 1 0 0.90 0 0 0 1 0" result="glow1"/>
-      <feGaussianBlur in="glow1" stdDeviation="9" result="blur2"/>
+      <feGaussianBlur in="glow1" stdDeviation="4.8" result="blur2"/>
       <feMerge>
         <feMergeNode in="blur2"/>
         <feMergeNode in="glow1"/>
@@ -77,23 +77,29 @@
         font: 700 56px 'Segoe UI', Arial, sans-serif;
         fill: url(#titleGradient);
         letter-spacing: 0.5px;
+        paint-order: stroke fill;
+        stroke: rgba(245, 239, 255, 0.35);
+        stroke-width: 0.7;
       }
       .title-glow {
         font: 700 56px 'Segoe UI', Arial, sans-serif;
         fill: url(#titleGradient);
         filter: url(#textGlowStrong);
         letter-spacing: 0.5px;
-        opacity: 0.98;
+        opacity: 0.72;
       }
       .subtitle {
         font: 600 26px 'Segoe UI', Arial, sans-serif;
         fill: url(#subtitleGradient);
+        paint-order: stroke fill;
+        stroke: rgba(243, 232, 255, 0.28);
+        stroke-width: 0.45;
       }
       .subtitle-glow {
         font: 600 26px 'Segoe UI', Arial, sans-serif;
         fill: url(#subtitleGradient);
         filter: url(#textGlow);
-        opacity: 0.92;
+        opacity: 0.7;
       }
       .caption {
         font: 500 18px 'Segoe UI', Arial, sans-serif;
@@ -210,12 +216,16 @@
   </g>
 
   <text x="600" y="150" text-anchor="middle" class="title-glow">Hey there, I'm Yu Zhang
-    <animate attributeName="opacity" values="0.88;1;0.9;0.98;0.88" dur="3.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.58;0.74;0.62;0.76;0.58" dur="3.4s" repeatCount="indefinite"/>
   </text>
   <text x="600" y="150" text-anchor="middle" class="title">Hey there, I'm Yu Zhang
-    <animate attributeName="opacity" values="0.94;1;0.96;1;0.94" dur="3.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.96;1;0.98;1;0.96" dur="3.4s" repeatCount="indefinite"/>
   </text>
-  <text x="600" y="202" text-anchor="middle" class="subtitle-glow">CS &amp; Linguistics @ UCLA</text>
-  <text x="600" y="202" text-anchor="middle" class="subtitle">CS &amp; Linguistics @ UCLA</text>
+  <text x="600" y="202" text-anchor="middle" class="subtitle-glow">CS &amp; Linguistics @ UCLA
+    <animate attributeName="opacity" values="0.56;0.72;0.6;0.74;0.56" dur="3s" repeatCount="indefinite"/>
+  </text>
+  <text x="600" y="202" text-anchor="middle" class="subtitle">CS &amp; Linguistics @ UCLA
+    <animate attributeName="opacity" values="0.96;1;0.98;1;0.96" dur="3s" repeatCount="indefinite"/>
+  </text>
   <text x="600" y="238" text-anchor="middle" class="caption">Exploring AI &amp; building real-world apps</text>
 </svg>
