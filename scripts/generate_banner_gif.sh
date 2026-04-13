@@ -7,19 +7,19 @@ SOURCE="$ASSETS/banner.svg"
 TMPDIR="$(mktemp -d /tmp/yuzhang-banner.XXXXXX)"
 trap 'rm -rf "$TMPDIR"' EXIT
 
-FPS=8
-REVEAL_FRAMES=24
-DELAY_FRAMES=16
-HOLD_FRAMES=24
-TOTAL_FRAMES=128
+FPS=10
+REVEAL_FRAMES=30
+DELAY_FRAMES=20
+HOLD_FRAMES=30
+TOTAL_FRAMES=160
 
 title_max_w=820
 subtitle_max_w=450
 caption_max_w=420
 
 title_start=0
-subtitle_start=40
-caption_start=80
+subtitle_start=$((REVEAL_FRAMES + DELAY_FRAMES))
+caption_start=$((subtitle_start + REVEAL_FRAMES + DELAY_FRAMES))
 
 calc_progress() {
   local frame=$1
@@ -76,11 +76,11 @@ for ((idx = 0; idx < TOTAL_FRAMES; idx++)); do
   subtitle_w=$(calc_width "$subtitle_progress" "$subtitle_max_w" "$REVEAL_FRAMES")
   caption_w=$(calc_width "$caption_progress" "$caption_max_w" "$REVEAL_FRAMES")
 
-  title_glow=$(calc_opacity "$title_progress" "$REVEAL_FRAMES" 0.08 0.92)
-  title_body=$(calc_opacity "$title_progress" "$REVEAL_FRAMES" 0.05 1.00)
-  subtitle_glow=$(calc_opacity "$subtitle_progress" "$REVEAL_FRAMES" 0.08 0.72)
-  subtitle_body=$(calc_opacity "$subtitle_progress" "$REVEAL_FRAMES" 0.05 1.00)
-  caption_body=$(calc_opacity "$caption_progress" "$REVEAL_FRAMES" 0.05 1.00)
+  title_glow=$(calc_opacity "$title_progress" "$REVEAL_FRAMES" 0.00 0.72)
+  title_body=$(calc_opacity "$title_progress" "$REVEAL_FRAMES" 0.00 1.00)
+  subtitle_glow=$(calc_opacity "$subtitle_progress" "$REVEAL_FRAMES" 0.00 0.58)
+  subtitle_body=$(calc_opacity "$subtitle_progress" "$REVEAL_FRAMES" 0.00 1.00)
+  caption_body=$(calc_opacity "$caption_progress" "$REVEAL_FRAMES" 0.00 1.00)
 
   cat "$bg_prefix" > "$frame_svg"
   cat >> "$frame_svg" <<EOF
@@ -123,5 +123,5 @@ EOF
   rsvg-convert -w 1200 -h 320 "$frame_svg" -o "$frame_png" >/dev/null
 done
 
-magick -delay 12 -loop 0 "$TMPDIR"/frame_*.png -layers Optimize "$ASSETS/banner.gif"
+magick -delay 10 -loop 0 "$TMPDIR"/frame_*.png -layers Optimize "$ASSETS/banner.gif"
 echo "Generated $ASSETS/banner.gif"
