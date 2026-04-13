@@ -12,11 +12,39 @@
       <stop stop-color="#E9D5FF"/>
       <stop offset="1" stop-color="#A855F7" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="titleGradient" x1="350" y1="120" x2="860" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F5EFFF">
+        <animate attributeName="stop-color" values="#F5EFFF;#D8B4FE;#C084FC;#F5EFFF" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="45%" stop-color="#C084FC">
+        <animate attributeName="stop-color" values="#C084FC;#A855F7;#E879F9;#C084FC" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#7C3AED">
+        <animate attributeName="stop-color" values="#7C3AED;#9333EA;#A855F7;#7C3AED" dur="5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="subtitleGradient" x1="450" y1="188" x2="760" y2="214" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F3E8FF">
+        <animate attributeName="stop-color" values="#F3E8FF;#D8B4FE;#F3E8FF" dur="4.6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#A855F7">
+        <animate attributeName="stop-color" values="#A855F7;#C084FC;#9333EA;#A855F7" dur="4.6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
     <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="2.2" result="blur1"/>
       <feColorMatrix in="blur1" type="matrix" values="1 0 0 0 0.66 0 1 0 0 0.33 0 0 1 0 0.97 0 0 0 1 0" result="glow"/>
       <feMerge>
         <feMergeNode in="glow"/>
+      </feMerge>
+    </filter>
+    <filter id="textGlowStrong" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4.2" result="blur1"/>
+      <feColorMatrix in="blur1" type="matrix" values="1 0 0 0 0.60 0 1 0 0 0.20 0 0 1 0 0.90 0 0 0 1 0" result="glow1"/>
+      <feGaussianBlur in="glow1" stdDeviation="9" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="glow1"/>
       </feMerge>
     </filter>
     <style>
@@ -47,23 +75,23 @@
       }
       .title {
         font: 700 56px 'Segoe UI', Arial, sans-serif;
-        fill: #EDE9FE;
+        fill: url(#titleGradient);
         letter-spacing: 0.5px;
       }
       .title-glow {
         font: 700 56px 'Segoe UI', Arial, sans-serif;
-        fill: #A855F7;
-        filter: url(#textGlow);
+        fill: url(#titleGradient);
+        filter: url(#textGlowStrong);
         letter-spacing: 0.5px;
-        opacity: 0.95;
+        opacity: 0.98;
       }
       .subtitle {
         font: 600 26px 'Segoe UI', Arial, sans-serif;
-        fill: #E9D5FF;
+        fill: url(#subtitleGradient);
       }
       .subtitle-glow {
         font: 600 26px 'Segoe UI', Arial, sans-serif;
-        fill: #C084FC;
+        fill: url(#subtitleGradient);
         filter: url(#textGlow);
         opacity: 0.92;
       }
@@ -181,8 +209,12 @@
     <circle cx="1082" cy="86" r="12" fill="url(#particleGlow)"/>
   </g>
 
-  <text x="600" y="150" text-anchor="middle" class="title-glow">Hey there, I'm Yu Zhang</text>
-  <text x="600" y="150" text-anchor="middle" class="title">Hey there, I'm Yu Zhang</text>
+  <text x="600" y="150" text-anchor="middle" class="title-glow">Hey there, I'm Yu Zhang
+    <animate attributeName="opacity" values="0.88;1;0.9;0.98;0.88" dur="3.4s" repeatCount="indefinite"/>
+  </text>
+  <text x="600" y="150" text-anchor="middle" class="title">Hey there, I'm Yu Zhang
+    <animate attributeName="opacity" values="0.94;1;0.96;1;0.94" dur="3.4s" repeatCount="indefinite"/>
+  </text>
   <text x="600" y="202" text-anchor="middle" class="subtitle-glow">CS &amp; Linguistics @ UCLA</text>
   <text x="600" y="202" text-anchor="middle" class="subtitle">CS &amp; Linguistics @ UCLA</text>
   <text x="600" y="238" text-anchor="middle" class="caption">Exploring AI &amp; building real-world apps</text>
