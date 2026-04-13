@@ -13,11 +13,10 @@
       <stop offset="1" stop-color="#A855F7" stop-opacity="0"/>
     </radialGradient>
     <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="2.2" result="blur1"/>
       <feColorMatrix in="blur1" type="matrix" values="1 0 0 0 0.66 0 1 0 0 0.33 0 0 1 0 0.97 0 0 0 1 0" result="glow"/>
       <feMerge>
         <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <style>
@@ -48,14 +47,25 @@
       }
       .title {
         font: 700 56px 'Segoe UI', Arial, sans-serif;
+        fill: #EDE9FE;
+        letter-spacing: 0.5px;
+      }
+      .title-glow {
+        font: 700 56px 'Segoe UI', Arial, sans-serif;
         fill: #A855F7;
         filter: url(#textGlow);
         letter-spacing: 0.5px;
+        opacity: 0.95;
       }
       .subtitle {
         font: 600 26px 'Segoe UI', Arial, sans-serif;
+        fill: #E9D5FF;
+      }
+      .subtitle-glow {
+        font: 600 26px 'Segoe UI', Arial, sans-serif;
         fill: #C084FC;
         filter: url(#textGlow);
+        opacity: 0.92;
       }
       .caption {
         font: 500 18px 'Segoe UI', Arial, sans-serif;
@@ -96,29 +106,71 @@
   </g>
 
   <g>
-    <circle class="node" cx="70" cy="58" r="8"/>
-    <circle class="node-sm" cx="178" cy="188" r="4.5"/>
-    <circle class="node" cx="316" cy="140" r="7"/>
-    <circle class="node-sm" cx="438" cy="78" r="3.8"/>
-    <circle class="node" cx="514" cy="226" r="6.5"/>
-    <circle class="node-sm" cx="566" cy="104" r="4.2"/>
-    <circle class="node" cx="668" cy="170" r="7.5"/>
-    <circle class="node-sm" cx="808" cy="106" r="4.2"/>
-    <circle class="node" cx="844" cy="234" r="6.6"/>
-    <circle class="node-sm" cx="960" cy="174" r="4.6"/>
-    <circle class="node" cx="968" cy="248" r="5.8"/>
-    <circle class="node-sm" cx="1082" cy="86" r="4.2"/>
+    <circle class="node" cx="70" cy="58" r="8">
+      <animate attributeName="r" values="7;9.2;7" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.55;1;0.55" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node-sm" cx="178" cy="188" r="4.5">
+      <animate attributeName="opacity" values="0.35;0.9;0.35" dur="3.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node" cx="316" cy="140" r="7">
+      <animate attributeName="r" values="6.4;8.4;6.4" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node-sm" cx="438" cy="78" r="3.8">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node" cx="514" cy="226" r="6.5">
+      <animate attributeName="r" values="6;7.8;6" dur="2.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node-sm" cx="566" cy="104" r="4.2">
+      <animate attributeName="opacity" values="0.35;0.85;0.35" dur="3.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node" cx="668" cy="170" r="7.5">
+      <animate attributeName="r" values="7;9.4;7" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.55;1;0.55" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node-sm" cx="808" cy="106" r="4.2">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node" cx="844" cy="234" r="6.6">
+      <animate attributeName="r" values="6.1;8.1;6.1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node-sm" cx="960" cy="174" r="4.6">
+      <animate attributeName="opacity" values="0.35;0.9;0.35" dur="3.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node" cx="968" cy="248" r="5.8">
+      <animate attributeName="r" values="5.4;6.8;5.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="node-sm" cx="1082" cy="86" r="4.2">
+      <animate attributeName="opacity" values="0.35;0.9;0.35" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
   <g>
-    <circle class="spark" cx="132" cy="112" r="1.8"/>
-    <circle class="spark" cx="228" cy="82" r="1.6" style="animation-delay: .6s"/>
-    <circle class="spark" cx="382" cy="218" r="1.5" style="animation-delay: 1.1s"/>
-    <circle class="spark" cx="610" cy="86" r="1.8" style="animation-delay: .4s"/>
-    <circle class="spark" cx="730" cy="250" r="1.6" style="animation-delay: 1.6s"/>
-    <circle class="spark" cx="902" cy="74" r="1.7" style="animation-delay: .9s"/>
-    <circle class="spark" cx="1024" cy="210" r="1.5" style="animation-delay: 1.3s"/>
-    <circle class="spark" cx="1112" cy="158" r="1.7" style="animation-delay: .2s"/>
+    <circle class="spark" cx="132" cy="112" r="1.8">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="spark" cx="228" cy="82" r="1.6">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="2.1s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="spark" cx="382" cy="218" r="1.5">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="2.3s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="spark" cx="610" cy="86" r="1.8">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="1.9s" begin="0.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="spark" cx="730" cy="250" r="1.6">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="2.4s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="spark" cx="902" cy="74" r="1.7">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="spark" cx="1024" cy="210" r="1.5">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="2.2s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="spark" cx="1112" cy="158" r="1.7">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="1.7s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
   <g opacity="0.8">
@@ -129,7 +181,9 @@
     <circle cx="1082" cy="86" r="12" fill="url(#particleGlow)"/>
   </g>
 
+  <text x="600" y="150" text-anchor="middle" class="title-glow">Hey there, I'm Yu Zhang</text>
   <text x="600" y="150" text-anchor="middle" class="title">Hey there, I'm Yu Zhang</text>
-  <text x="600" y="202" text-anchor="middle" class="subtitle">Nice to meet you.</text>
-  <text x="600" y="238" text-anchor="middle" class="caption">CS student building practical apps with clean engineering</text>
+  <text x="600" y="202" text-anchor="middle" class="subtitle-glow">CS &amp; Linguistics @ UCLA</text>
+  <text x="600" y="202" text-anchor="middle" class="subtitle">CS &amp; Linguistics @ UCLA</text>
+  <text x="600" y="238" text-anchor="middle" class="caption">Exploring AI &amp; building real-world apps</text>
 </svg>
