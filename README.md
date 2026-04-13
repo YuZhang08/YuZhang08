@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YuZhang08/YuZhang08/main/assets/banner.gif?v=20260413e" alt="Yu Zhang banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/YuZhang08/YuZhang08/main/assets/banner.gif?v=20260413f" alt="Yu Zhang banner" width="100%" />
 </p>
 
 <p align="center">
